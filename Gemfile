@@ -29,7 +29,7 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
-
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form', github: 'heartcombo/simple_form'
