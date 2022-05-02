@@ -6,9 +6,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @land = Land.find(params[:service_id])
+    @land = Land.find(params[:land_id])
     @user = current_user
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(params_booking)
     @booking.user = @user
     @booking.land = @land
   end
