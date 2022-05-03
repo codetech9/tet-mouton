@@ -1,13 +1,18 @@
 class BookingsController < ApplicationController
 
-  def create
-    @land = Land.find(params[:id])
-    @booking = Booking.new(params_booking)
-  end
-
   def new
+    @land = Land.find(params[:land_id])
     @booking = Booking.new
   end
+
+  def create
+    @land = Land.find(params[:land_id])
+    @user = current_user
+    @booking = Booking.new(params_booking)
+    @booking.user = @user
+    @booking.land = @land
+  end
+
 
   private
 
