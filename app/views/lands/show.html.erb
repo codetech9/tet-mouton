@@ -1,2 +1,7 @@
-<h1>Lands#show</h1>
-<p>Find me in app/views/lands/show.html.erb</p>
+<h1>Land</h1>
+<h2>Emplacement: <%= @land.location.capitalize%></h2>
+<p>Surface: <%= @land.area %>m²</p>
+<p>Description: <%= @land.description %></p>
+<p>Prix: <%= @land.price %>€/mois</p>
+
+<%= link_to "Nos Terrains", lands_path %>

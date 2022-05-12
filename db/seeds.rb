@@ -5,38 +5,38 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-puts 'before'
-
-require 'faker'
-
-puts 'test'
 
 User.destroy_all
 Land.destroy_all
 
-puts 'Creating 10 fake users and lands...'
+puts 'Creating Users and Lands...'
 
-10.times do
-  user = User.create(
-    last_name: Faker::Name.unique.name,
-    first_name: Faker::Name.unique.name,
-    email: Faker::Internet.unique.email,
-    password: Faker::Internet.password(min_length: 6)
-  )
-  puts " user created  end ?"
-end
+farmer1 = User.create!(email: 'briceglace@gmail.com', password: '4567SD')
+owner1 = User.create!(email: 'brandon@gmail.com', password: '3459QD')
+land1 = Land.create!(location: "morne-rouge", area: "500m²", description: "Une parcelle verte, humide, avec un climat doux très prospère au développement de votre cheptel." ,price: 1000, owner: owner1)
 
-10.times do
-  Land.create(
-    location: Faker::Address.city,
-    area: Faker::Number.within(range: 150..400),
-    price: Faker::Number.within(range: 100..200),
-    owner_id: User.select(:id).sample
-  )
-  puts " land created  end ?"
-end
+farmer2 = User.create!(email: "tartes@gmail.com", password:"5678AB")
+owner2 = User.create!(email: "boiseu@gmail.com", password:"1234QS")
+land2 = Land.create!(location: "gros-morne", area: "400m²", description: "Une parcelle verte, humide, avec un climat doux très prospère au développement de votre cheptel.", price: 900, owner: owner2)
 
 
+farmer3 = User.create!(email: 'bartabac@gmail.com', password: '0876BD')
+owner3 = User.create!(email: 'paulemploi@gmail.com', password: '3567ZD')
+land3 = Land.create!(location: "rivière-salée", area: "700m²", description: "Une parcelle verte, humide, avec un climat doux très prospère au développement de votre cheptel.", price: 1600, owner: owner3)
 
+
+farmer4 = User.create!(email: 'jeannémar@gmail.com', password: '3568FG')
+owner4 = User.create!(email: 'adamtroijours@gmail.com', password: '8634CV')
+land4 = Land.create!(location: "vert-pré", area: "800m²", description: "Une parcelle verte, humide, avec un climat doux très prospère au développement de votre cheptel.", price: 2500, owner: owner4)
+
+
+farmer5 = User.create!(email: 'alaindi@gmail.com', password: '2457FG')
+owner5 = User.create!(email: 'saracroche@gmail.com', password: '9753HJ')
+land5 = Land.create!(location: "marigot", area: "300m²", description: "Une parcelle verte, humide, avec un climat doux très prospère au développement de votre cheptel.", price: 700, owner: owner5)
+
+
+farmer6 = User.create!(email: 'edméeméamonté@gmail.com', password: '6723FH')
+owner6 = User.create!(email: 'jerrybeaucoup@gmail.com', password: '8023RF')
+land6 = Land.create!(location: "robert", area: "860m²", description: "Une parcelle verte, humide, avec un climat doux très prospère au développement de votre cheptel.", price: 1800, owner: owner6)
 
 puts 'end'
